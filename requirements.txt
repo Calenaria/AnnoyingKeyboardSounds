@@ -1,0 +1,5 @@
+cython
+playsound
+keyboard
+pygame
+mutagen
