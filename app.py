@@ -6,8 +6,17 @@ class SoundApp:
     def __init__(self, root):
         self.root = root
         self.sounds = []
+        self.is_listening = False
         load_gui(self)
-        keyboard.on_press(self.play_random_sound) 
+
+    def toggle_listening(self):
+        if self.is_listening:
+            keyboard.unhook_all()
+            self.toggle_listener.config(text="Start")
+        else:
+            keyboard.on_press(self.play_random_sound)
+            self.toggle_listener.config(text="Stop")
+        self.is_listening = not self.is_listening
 
     def play_random_sound(self, event = None):
         if self.sounds:

@@ -27,7 +27,9 @@ def load_gui(app):
     app.add_button = ttk.Button(app.root, text="Add Sound", command=app.add_sound)
     app.remove_button = ttk.Button(app.root, text="Remove Sound", command=app.remove_sound)
     app.clear_button = ttk.Button(app.root, text="Clear All", command=app.clear_sounds)
+    app.toggle_listener = ttk.Button(app.root, text="Start", command=app.toggle_listening)
 
     app.add_button.pack(pady=10)
     app.remove_button.pack(pady=10)
     app.clear_button.pack(pady=10)
+    app.toggle_listener.pack(pady=10)
