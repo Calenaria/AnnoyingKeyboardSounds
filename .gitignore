@@ -1,3 +1,7 @@
 # python
 .venv
 __pycache__
+
+# pyinstaller
+build
+main.spec

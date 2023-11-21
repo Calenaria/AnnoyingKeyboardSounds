@@ -9,7 +9,7 @@ class SoundApp:
         load_gui(self)
         keyboard.on_press(self.play_random_sound) 
 
-    def play_random_sound(self):
+    def play_random_sound(self, event = None):
         if self.sounds:
             selected_sound = random.choice(self.sounds)
             channel = pygame.mixer.find_channel()
@@ -17,6 +17,11 @@ class SoundApp:
                 sound = pygame.mixer.Sound(selected_sound)
                 sound.set_volume(self.volume_scale.get())
                 channel.play(sound)
+
+    def clear_sounds(self):
+        for x in self.treeview.get_children():
+            self.treeview.delete(x)
+        self.sounds = []
 
     def add_sound(self):
         file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mp3 *.wav")])

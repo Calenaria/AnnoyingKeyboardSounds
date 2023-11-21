@@ -3,3 +3,4 @@ playsound
 keyboard
 pygame
 mutagen
+pyinstaller
